@@ -33,6 +33,7 @@ class LoginController extends BaseController
                     'id' => $usuario['id'],
                     'name' => $usuario['fullname'],
                     'email' => $usuario['email'],
+                    'type_person' => $usuario['type_person'],
                     'isLoggedIn' => TRUE
                 ];
                 $session->set($ses_data);

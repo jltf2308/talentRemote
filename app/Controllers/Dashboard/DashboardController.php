@@ -10,6 +10,7 @@ class DashboardController extends BaseController
     public function index()
     {
         $session = session();
+        // dd($session->type_person);
         return view('\Dashboard\Dashboard');
     }
 }

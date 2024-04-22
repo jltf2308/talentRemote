@@ -47,4 +47,23 @@ class Person extends Model
     protected $afterFind = [];
     protected $beforeDelete = [];
     protected $afterDelete = [];
+
+    public function obtenerPerfil($username)
+    {
+        $db = $this->db;
+
+        $sql = 'SELECT *
+                FROM people p
+                JOIN users u ON u.person_id = p.id
+                WHERE u.email = ?';
+
+        $query = $db->query($sql, [$username]);
+
+        if ($query->getNumRows() > 0) {
+            $usuario = $query->getRowArray();
+            return $usuario;
+        } else {
+            return null;
+        }
+    }
 }

@@ -53,7 +53,7 @@ class User extends Model
     {
         $db = $this->db;
 
-        $sql = 'SELECT concat(p.first_name, " ",  p.last_name) as fullname, u.id, u.username, u.email, u.password
+        $sql = 'SELECT concat(p.first_name, " ",  p.last_name) as fullname, p.type_person, u.id, u.username, u.email, u.password
                 FROM people p
                 JOIN users u ON u.person_id = p.id
                 WHERE u.email = ?';
